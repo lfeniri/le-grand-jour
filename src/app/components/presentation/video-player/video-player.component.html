@@ -1,0 +1,19 @@
+<div class="video-player">
+    <span class="close" (click)="closeVideoPlayer()">&times;</span>
+    <div class="videos-list">
+        <img src="/assets/images/videos-images/video-image-1.PNG" alt=""
+        (click)= "changeVideo(videos[0])">
+        <img src="/assets/images/videos-images/video-image-2.PNG" alt=""
+        (click)= "changeVideo(videos[1])">
+        <img src="/assets/images/videos-images/video-image-3.PNG" alt=""
+        (click)= "changeVideo(videos[2])">
+    </div>
+    <iframe
+        id="video"
+        [src]="currentVideo"  allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen" 
+        msallowfullscreen="msallowfullscreen" 
+        oallowfullscreen="oallowfullscreen" 
+        webkitallowfullscreen="webkitallowfullscreen">
+    </iframe>
+</div>

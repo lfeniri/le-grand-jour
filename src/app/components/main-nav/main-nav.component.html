@@ -1,0 +1,130 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === true">
+  
+      <mat-toolbar class="sidenav-header">
+        <mat-toolbar-row>Le grand jour</mat-toolbar-row>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" routerLinkActive="routerLinkActive" (click)="drawer.toggle()">
+          <span>Home</span>
+        </a>
+        <a mat-list-item routerLink="/prices" routerLinkActive="routerLinkActive"
+        (click)="drawer.toggle()">
+          <span>Prices</span>
+        </a>
+        <div mat-list-item *ngIf="haveAdminRight()">
+          <mat-expansion-panel class="mat-elevation-z0 p-0 m-0">
+            <mat-expansion-panel-header class="p-3">
+                <mat-icon class="material-icons fg-cyan mr-2 ">bar_chart</mat-icon>
+                <span>Administration</span>
+            </mat-expansion-panel-header>
+            <mat-nav-list class="p-0 m-0">
+              <a mat-list-item routerLink="/administration/accounts" routerLinkActive="routerLinkActive"
+              (click)="drawer.toggle()">
+                <mat-icon class="material-icons fg-cyan mr-2 " >group</mat-icon>
+                <span>Comptes</span>
+              </a>
+              <div mat-list-item>
+                <mat-expansion-panel class="mat-elevation-z0 p-0 m-0">
+                  <mat-expansion-panel-header class="pl-2 pr-2">
+                      <mat-icon class="material-icons fg-cyan mr-2 ">list_alt</mat-icon>
+                      <span>Commandes</span>
+                  </mat-expansion-panel-header>
+                  <mat-nav-list class="p-0 m-0">
+                    <a mat-list-item routerLink="/administration/orders/planning" routerLinkActive="routerLinkActive"
+                    (click)="drawer.toggle()">
+                      <mat-icon class="material-icons fg-cyan mr-2 ">show_chart</mat-icon>
+                      <span>Planning</span>
+                    </a>
+                    <a mat-list-item routerLink="/administration/orders" routerLinkActive="routerLinkActive"
+                    (click)="drawer.toggle()">
+                      <mat-icon class="material-icons fg-cyan mr-2 ">file_copy</mat-icon>
+                      <span>Commandes</span>
+                    </a>
+                  </mat-nav-list>
+                </mat-expansion-panel>
+              </div>
+              
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </div>
+        <a mat-list-item routerLink="/team" routerLinkActive="routerLinkActive"
+        (click)="drawer.toggle()">
+          <span>Team</span>
+        </a>
+        <a mat-list-item routerLink="/reviews" routerLinkActive="routerLinkActive"
+        (click)="drawer.toggle()">
+          <span>Reviews</span>
+        </a>
+        <a mat-list-item routerLink="/contact" routerLinkActive="routerLinkActive"
+        (click)="drawer.toggle()">
+          <span>Contact</span>
+        </a>
+        <a mat-list-item routerLink="/login" routerLinkActive="routerLinkActive"
+        (click)="drawer.toggle()" *ngIf="false">
+          <mat-icon class="material-icons fg-cyan mr-2 " >login</mat-icon>
+          <span>Se connecter</span>
+        </a>
+        <a mat-list-item routerLink="/logout" routerLinkActive="routerLinkActive"
+        (click)="logout(); drawer.toggle()" *ngIf="false">
+          <mat-icon class="material-icons fg-cyan mr-2 ">logout</mat-icon>
+          <span>Se déconnecter</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="nav">
+          <div class="row w-100 ">
+            <div class="col-1 mt-2">
+              <button
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()"
+                *ngIf="(isHandset$ | async) === true">
+                <mat-icon class="menu-toggle-icon" aria-label="toggle icon">menu</mat-icon>
+              </button>
+            </div>
+            <div class="mt-2 col-11" *ngIf="(isHandset$ | async) === false">
+              <div class="row w-100 justify-content-end text-center" >
+                <div class="col-1 pl-2 pr-2" >
+                  <a  routerLink="/home" routerLinkActive="routerLinkActive">
+                    <span>Home</span>
+                  </a>
+                </div>
+                <div class="col-1 pl-2 pr-2" >
+                  <a  routerLink="/prices" routerLinkActive="routerLinkActive">
+                    <span>Prices</span>
+                  </a>
+                </div>
+                <div class="col-1 pl-2 pr-2" >
+                  <a  routerLink="/team" routerLinkActive="routerLinkActive">
+                    <span>Team</span>
+                  </a>
+                </div>
+                <div class="col-1 pl-2 pr-2" >
+                  <a  routerLink="/reviews" routerLinkActive="routerLinkActive">
+                    <span>Reviews</span>
+                  </a>
+                </div>
+                <div class="col-1 pl-2 pr-2" >
+                  <a  routerLink="/contact" routerLinkActive="routerLinkActive">
+                    <span>Contact</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 d-flex flex-row-reverse" *ngIf="false">
+              <div class="mr-4 d-none d-sm-block">
+                <mat-icon class="accountTag" [matTooltip]="getUserName()" *ngIf="isAuth()">account_circle</mat-icon>
+              </div>
+            </div>
+          </div>
+      </mat-toolbar>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

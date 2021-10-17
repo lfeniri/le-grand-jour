@@ -1,0 +1,30 @@
+.page{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 8%;
+    padding-bottom: 10%;
+}
+
+.card:hover{
+    transform: scale(0.9);
+}
+img{
+    width: 80px;
+    height: 80px;
+}
+@keyframes wipe-enter {
+	0% {
+        opacity: 0;
+		left: -20%;
+	}
+    100% {
+		left: 0%;
+		opacity: 1;
+	}
+}
+@media (prefers-reduced-motion: no-preference) {
+    .square-animation {
+      animation: wipe-enter 3s 1;
+    }
+}

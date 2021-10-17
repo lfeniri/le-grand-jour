@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    word-wrap: break-word;
+    
+}
+
+/* css table header*/
+th.mat-header-cell{
+    color: white;
+}
+tr.mat-header-row {
+    color: white;
+    background-color: #581d74;
+}
+
+mat-card.filterForm{
+    border: 0.1rem solid #581d74;
+}
+
+mat-card.filterForm:hover{
+    border-left: 0.2rem solid #581d74;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #652275 0%,
+											  #581d71 50%,
+											  #581d72 51%,
+											  #581d74 100%);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

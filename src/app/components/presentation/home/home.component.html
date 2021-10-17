@@ -1,0 +1,12 @@
+<div class="page">
+    <div class="container text-center">
+        <h3>We Are Introducing</h3>
+        <h1 class="pt-4">Startup Landing Page Pack</h1>
+        <div class="video-thumbnail">
+            <div class="play-btn" (click)="showVideos()">
+                <i class="fa fa-play-circle" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<app-video-player (close)="closeVideos($event)" *ngIf="isShowVideos"></app-video-player>

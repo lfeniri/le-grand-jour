@@ -1,0 +1,26 @@
+<div class="page">
+    <div class="container text-center">
+        <h3>Our clients</h3>
+    </div>
+
+    <div class="row justify-content-center">
+        <mat-card class="col-sm-3 text-center p-0 m-4 card square-animation" *ngFor="let review of reviewsToDesplay">
+            <img
+            [src]="review.avatar"
+            mat-card-avatar />
+            <mat-card-title class="p-2 m-0">
+                <h4>{{review.name}}</h4>
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{review.job}}
+              </mat-card-subtitle>
+            <mat-card-content class="pl-0 pr-0 pb-4">
+                <div class="description">
+                    <p>
+                        {{review.comment}}
+                    </p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

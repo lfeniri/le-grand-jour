@@ -1,0 +1,54 @@
+  .sidenav-container {
+    background-color: transparent;
+    height: 100%;
+  }
+  .sidenav-header {
+    background-color: transparent;
+    color: #c1ccd9;
+  }
+  .sidenav {
+    background-color: transparent;
+    width: 250px;
+  }
+  .mat-sidenav-content>.mat-toolbar{
+    background-color: #1fe0;
+  }
+  
+  a{
+    color: #c1ccd9;
+  }
+  
+  a:hover{
+    color: #581d74;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  
+  .routerLinkActive{
+    color: #ffc107;
+  }
+  a{
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .nav{
+    position: fixed;
+    z-index: 2;
+  }
+
+  .menu-toggle-icon {
+    font-size: 30px;
+    color: #581d74;
+  }
+  .envTag{
+    font-size: 30px;
+    color: #581d74;
+  }
+  .accountTag{
+    font-size: 40px;
+    color: #4CAF50;
+    cursor: pointer;
+  }
+  

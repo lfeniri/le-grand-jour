@@ -1,0 +1,26 @@
+.page{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 8%;
+    padding-bottom: 10%;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes wipe-enter {
+	0% {
+        opacity: 0;
+	}
+    100% {
+		opacity: 1;
+	}
+}
+@media (prefers-reduced-motion: no-preference) {
+    .square-animation {
+      animation: wipe-enter 3s 1;
+    }
+}
