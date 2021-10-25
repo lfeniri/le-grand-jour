@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: "http://localhost:80/api/",
+  path: {
+    login: 'users/authenticate'
+  }
 };
